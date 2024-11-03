@@ -1,0 +1,6 @@
+#FileLock
+#Sun Nov 03 18:18:14 BRT 2024
+server=192.168.0.100\:63654
+hostName=192.168.0.100
+method=file
+id=192f3e482a459aa1094d1e1a257514300caf051bba8
