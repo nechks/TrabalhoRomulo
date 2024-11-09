@@ -4,80 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Informações</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+        body {  
+    font-family: Arial, Helvetica, sans-serif, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    
+}  
 
-        .info-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
+header {  
+    background-color: #fefafa;  
+    padding: 10px 20px;  
+}  
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+nav ul {  
+    list-style: none;  
+    display: flex;  
+    justify-content: space-between; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-variant: small-caps ;
+    font-style: italic;
+    color: #5997df;
+    font-size: xx-large;
+   
+}  
 
-        p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+.hero {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    background-color: #e0f7fa;  
+    padding: 40px;  
+}  
 
-        ul {
-            color: #555;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
+.text-content {  
+    max-width: 600px;  
+}  
 
-        ul li {
-            margin-bottom: 10px;
-        }
+.text-content h1 {  
+    font-size: 3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;  
+}  
 
-        a {
-            display: block;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 16px;
-        }
+.text-content p {  
+    margin: 20px 0; 
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
 
-        a:hover {
-            background-color: #45a049;
-        }
+}  
+
+
+.image-content img {  
+    max-width: 100%;  
+    height: auto;  
+}  
+
+.footer {  
+    background-color: #003366;  
+    color: white;  
+    padding: 20px;  
+    text-align: center;  
+}  
+
     </style>
 </head>
-<body>
-
-<div class="info-container">
-    <h2>Sobre Nós</h2>
-    <p>
-        Bem vindo, sou eu Martinelli, estou fazendo um teste de apliçao, como isso vou precisar dos seu seguintes dados nome e idade
-    </p>
-    <p>
-        Meu objetivo e entender o que eu estou fazendo, ate entao não foi comprido, mas sigo na luta. Obrigado pela a atenção.
-    </p>
-    <p>
-        Por favor vai para pagina de formulario.
-    </p>
-    <a href="pessoas">Aperte aqui para formulario</a>
-</div>
-
-</body>
+<body>  
+    <header>  
+        <nav>  
+            <ul>  
+                <li>cadastro</li>  
+            </ul>  
+        </nav>  
+    </header>  
+    <main>  
+        <section class="hero">  
+            <div class="text-content">  
+                <h1>Cadastre-se e descubra benefícios exclusivos que só nossos membros têm.</h1>  
+                <p>É rápido, leva apenas alguns minutos e o acesso é super fácil!</p>  
+                
+            </div>  
+            <div class="image-content">  
+                <img th:src="@{/images/index.png}" alt="cadastro">
+            </div>  
+        </section>  
+        <section class="footer">  
+            <p>Clique no botão abaixo e acesse a página de cadastro.</p>  
+                     
+            <a href="pessoas" style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-align: center; text-decoration: none; border-radius: 5px;">CLIQUE AQUI!</a>  
+        </section>  
+    </main>  
+</body> 
 </html>
