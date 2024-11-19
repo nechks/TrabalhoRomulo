@@ -42,8 +42,17 @@
 
 
                     <td>
-                        <button class="btn-editar">Editar</button>
-                        <button class="btn-deletar">Deletar</button>
+                        <!-- Botão para editar -->
+                        <form th:action="@{/pessoas/editar/form/{id}(id=${pessoa.id})}" method="get" style="display:inline;">
+                            <button class="btn-editar">Editar</button>
+                        </form>
+
+
+                        <form th:action="@{/pessoas/deletar/{id}(id=${pessoa.id})}" method="post" style="display:inline;">
+                            <button class="btn-deletar">Deletar</button>
+                        </form>
+                        
+                        
                     </td>
                 </tr>
 
@@ -53,6 +62,10 @@
         <!-- Formulário para limpar o banco de dados e a lista em memória -->
         <form th:action="@{/limparDados}" method="post">
             <button type="submit">Limpar Dados</button>
+        </form>
+
+        <form th:action="@{/pessoas}" method="get">
+            <button type="submit">formulario</button>
         </form>
     </div>
 </body>

@@ -42,7 +42,6 @@ public class PessoaController {
         return "redirect:/pessoas/listarPessoas";
     }
 
-
     @GetMapping("pessoas/listarPessoas")
     public String listarPessoas(Model model) {
         List<Pessoas> pessoas = pessoaRepositery.findAll();
@@ -70,5 +69,50 @@ public class PessoaController {
         }
         return "redirect:/pessoas/listarPessoas";
     }
+
+    @PostMapping("/pessoas/editar/{id}")
+    public String editarPessoa(@PathVariable Long id, Pessoas pessoaAtualizada, RedirectAttributes redirectAttributes) {
+        Pessoas pessoaExistente = pessoaRepositery.findById(id).orElse(null);
+
+        if (pessoaExistente == null) {
+            redirectAttributes.addFlashAttribute("mensagem", "Pessoa não encontrada para edição!");
+            return "redirect:/pessoas/listarPessoas";
+        }
+
+        pessoaExistente.setNome(pessoaAtualizada.getNome());
+        pessoaExistente.setIdade(pessoaAtualizada.getIdade());
+
+        if (pessoaAtualizada.getEndereco() != null) {
+            EnderecoPessoas endereco = pessoaExistente.getEndereco();
+            if (endereco == null) {
+                endereco = new EnderecoPessoas();
+                pessoaExistente.setEndereco(endereco);
+            }
+            endereco.setRua(pessoaAtualizada.getEndereco().getRua());
+            endereco.setCidade(pessoaAtualizada.getEndereco().getCidade());
+            endereco.setEstado(pessoaAtualizada.getEndereco().getEstado());
+            endereco.setCep(pessoaAtualizada.getEndereco().getCep());
+        }
+
+        pessoaRepositery.save(pessoaExistente);
+        redirectAttributes.addFlashAttribute("mensagem", "Pessoa editada com sucesso!");
+        return "redirect:/pessoas/listarPessoas";
+    }
+
+    @GetMapping("/pessoas/editar/form/{id}")
+    public String mostrarFormularioEdicao(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
+        Pessoas pessoa = pessoaRepositery.findById(id).orElse(null);
+
+        if (pessoa == null) {
+            redirectAttributes.addFlashAttribute("mensagem", "Pessoa não encontrada!");
+            return "redirect:/pessoas/listarPessoas";
+        }
+
+        model.addAttribute("pessoa", pessoa);
+        return "editarPessoa";
+    }
+
+
+    
 
 }

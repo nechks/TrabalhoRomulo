@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pessoa</title>
+    <link rel="stylesheet" th:href="@{/css/editarPessoa.css}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Editar Pessoa</h1>
+        </header>
+
+        <form th:action="@{/pessoas/editar/{id}(id=${pessoa.id})}" method="post">
+            <input type="hidden" name="id" th:value="${pessoa.id}">
+            
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" th:value="${pessoa.nome}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" th:value="${pessoa.idade}" required>
+            </div>
+
+            <h2>Endereço</h2>
+            <div class="form-group">
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="endereco.rua" th:value="${pessoa.endereco != null ? pessoa.endereco.rua : ''}">
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="endereco.cidade" th:value="${pessoa.endereco != null ? pessoa.endereco.cidade : ''}">
+            </div>
+
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="endereco.estado" th:value="${pessoa.endereco != null ? pessoa.endereco.estado : ''}">
+            </div>
+
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="endereco.cep" th:value="${pessoa.endereco != null ? pessoa.endereco.cep : ''}">
+            </div>
+
+            <button type="submit">Salvar</button>
+            <a th:href="@{/pessoas/listarPessoas}" class="btn-cancelar">Cancelar</a>
+        </form>
+    </div>
+</body>
+
+</html>
