@@ -1,74 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Informações</title>
-
-    <style>
-        body {  
-    font-family: Arial, Helvetica, sans-serif, sans-serif;  
-    margin: 0;  
-    padding: 0;  
-    
-}  
-
-header {  
-    background-color: #fefafa;  
-    padding: 10px 20px;  
-}  
-
-nav ul {  
-    list-style: none;  
-    display: flex;  
-    justify-content: space-between; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-variant: small-caps ;
-    font-style: italic;
-    color: #5997df;
-    font-size: xx-large;
-   
-}  
-
-.hero {  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-    background-color: #e0f7fa;  
-    padding: 40px;  
-}  
-
-.text-content {  
-    max-width: 600px;  
-}  
-
-.text-content h1 {  
-    font-size: 3em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;  
-}  
-
-.text-content p {  
-    margin: 20px 0; 
-    font-size: 2em;
-    font-family: Arial, Helvetica, sans-serif;
-
-}  
-
-
-.image-content img {  
-    max-width: 100%;  
-    height: auto;  
-}  
-
-.footer {  
-    background-color: #003366;  
-    color: white;  
-    padding: 20px;  
-    text-align: center;  
-}  
-
-    </style>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
+
 <body>  
     <header>  
         <nav>  
@@ -77,22 +16,25 @@ nav ul {
             </ul>  
         </nav>  
     </header>  
+
     <main>  
         <section class="hero">  
             <div class="text-content">  
                 <h1>Cadastre-se e descubra benefícios exclusivos que só nossos membros têm.</h1>  
                 <p>É rápido, leva apenas alguns minutos e o acesso é super fácil!</p>  
-                
             </div>  
+
             <div class="image-content">  
                 <img th:src="@{/images/index.png}" alt="cadastro">
             </div>  
         </section>  
+
         <section class="footer">  
             <p>Clique no botão abaixo e acesse a página de cadastro.</p>  
                      
-            <a href="pessoas" style="display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-align: center; text-decoration: none; border-radius: 5px;">CLIQUE AQUI!</a>  
+            <a href="pessoas">CLIQUE AQUI!</a>  
         </section>  
     </main>  
 </body> 
+
 </html>
