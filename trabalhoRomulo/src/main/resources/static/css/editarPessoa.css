@@ -1,66 +1,105 @@
+/* editarPessoa.css */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 24px;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.btn-novo-usuario {
-    background-color: #4CAF50;
-    color: white;
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3498db;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
-th,
-td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.btn-cancelar {
+    display: inline-block;
+    text-align: center;
+    margin-top: 16px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3498db;
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-th {
-    background-color: #f2f2f2;
+.btn-cancelar:hover {
+    background-color: #3498db;
+    color: #fff;
 }
 
-.btn-editar,
-.btn-deletar {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-.btn-deletar {
-    background-color: #FF5733;
-}
